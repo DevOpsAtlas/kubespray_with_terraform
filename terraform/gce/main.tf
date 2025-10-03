@@ -10,7 +10,6 @@ terraform {
       version = "~> 2"
     }
   }
-
 }
 
 provider "google" {
@@ -187,7 +186,7 @@ locals {
 }
 
 resource "local_file" "kubespray_inventory" {
-  filename        = "${path.root}/../../kubespray/inventory/fleet/inventory.ini"
+  filename        = "${path.root}/../../kubespray/inventory/atlas/inventory.ini"
   content         = local.inventory_content
   file_permission = "0644"
 }
