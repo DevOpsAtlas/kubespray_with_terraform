@@ -50,7 +50,7 @@ module "kube_controllers" {
   tags          = concat(var.base_tags, ["controller"])
   subnet_id     = linode_vpc_subnet.kube_subnet.id
 
-  private_ip       = false
+  private_ip       = var.private_ip_enabled
   authorized_keys  = local.ssh_authorized_keys
   root_pass        = var.root_pass
   user_data_base64 = local.cloud_init_base64
@@ -69,7 +69,7 @@ module "kube_workers" {
   tags          = concat(var.base_tags, ["worker"])
   subnet_id     = linode_vpc_subnet.kube_subnet.id
 
-  private_ip       = false
+  private_ip       = var.private_ip_enabled
   authorized_keys  = local.ssh_authorized_keys
   root_pass        = var.root_pass
   user_data_base64 = local.cloud_init_base64

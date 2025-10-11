@@ -58,6 +58,11 @@ variable "admin_user" {
   default     = "kubespray"
 }
 
+variable "private_ip_enabled" {
+  type    = bool
+  default = true
+}
+
 variable "ssh_pubkey_path" {
   description = "Path to the SSH public key to authorize on the nodes"
   type        = string
